@@ -218,7 +218,7 @@ function getValue($key, $defaultValue = false)
 //Helper function to save image
 function saveTempImage($id_product, $id_image, $contents){
 	//You can use your imagination and store the images on the server using your own naming logic, we use the following:
-	$filename = __DIR__.'product-'-'.$id_product.'-'.$id_image.'.jpg';
+	$filename = __DIR__.'product-'.$id_product.'-'.$id_image.'.jpg';
 	$res = file_put_contents($filename, $contents);
 	if ($res===false)
 		return false;
