@@ -342,10 +342,11 @@ ImageUploader.prototype.applyBilinearInterpolation = function(srcCanvasData, des
 ImageUploader.prototype.setConfig = function(customConfig) {
     this.config = customConfig;
     this.config.debug = this.config.debug || false;
-    this.config.quality = 1.00;
-    if (0.00 < customConfig.quality && customConfig.quality <= 1.00) {
-        this.config.quality = customConfig.quality;
-    }
+    this.config.quality = customConfig.quality || 1.00;
+    // this.config.quality = 1.00;
+    // if (0.00 < customConfig.quality && customConfig.quality <= 1.00) {
+    //     this.config.quality = customConfig.quality;
+    // }
     if ( (!this.config.maxWidth) || (this.config.maxWidth<0) ){
         this.config.maxWidth = 1024;
     }
